@@ -45,7 +45,7 @@ selected_entities = st.sidebar.multiselect(
 )
 selected_model = models[selected_language]
 
-text_input = st.text_area("Type a text to anonymize")
+text_input = st.text_area("Type a text to Analyze")
 
 uploaded_file = st.file_uploader("or Upload a file", type=["doc", "docx", "pdf", "txt"])
 if uploaded_file is not None:
@@ -59,7 +59,7 @@ tokens = process_text(doc, selected_entities)
 annotated_text(*tokens)
 
 if anonymize:
-    st.markdown("**Anonymized text**")
+    st.markdown("**Analized text**")
     st.markdown("---")
     anonymized_tokens = process_text(doc, selected_entities, anonymize=anonymize)
     annotated_text(*anonymized_tokens)
