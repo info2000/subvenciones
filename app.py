@@ -52,7 +52,7 @@ if uploaded_file is not None:
     text_input = uploaded_file.getvalue()
     text_input = text_input.decode("utf-8")
 
-anonymize = st.checkbox("Anonymize")
+anonymize = st.button("Analyze")
 doc = selected_model(text_input)
 tokens = process_text(doc, selected_entities)
 
