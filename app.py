@@ -50,7 +50,10 @@ text_input = st.text_area("Type a text to Analyze")
 
 uploaded_file = st.file_uploader("or Upload a file", type=[  "pdf" ])
 if uploaded_file is not None:
+    print(uploaded_file)    
     text_input = uploaded_file.getvalue()
+    print('*****')
+    print(text_input)
     text_input = text_input.decode("utf-8")
 
 anonymize = st.button("Analyze")
