@@ -53,12 +53,19 @@ if uploaded_file is not None:
     bytes_data = uploaded_file.read()
     print( "filename:", uploaded_file.name)    
     st.write("filename:", uploaded_file.name)
-    filepath= uploaded_file.name
-    open(filepath , 'wb').write(bytes_data)
-    
-    st.write(filepath)
+    pathlocalfichero= uploaded_file.name
+    open(pathlocalfichero , 'wb').write(bytes_data)    
+    st.write(pathlocalfichero)
+    pdf = fitz.open(pathlocalfichero)
+    pages = list(range(pdf.pageCount))
+    textoblock=""
+        for pg in range(pdf.pageCount):
+            page = pdf[pg]
+            texto=page.get_text()
+            textoblock=textoblock+texto
     #text_input = text_input.decode("utf-8")
-
+    st.write(textoblock)    
+    
 anonymize = st.button("Analyze")
 doc = selected_model(text_input)
 tokens = process_text(doc, selected_entities)
