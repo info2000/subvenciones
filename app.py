@@ -59,10 +59,10 @@ if uploaded_file is not None:
     pdf = fitz.open(pathlocalfichero)
     pages = list(range(pdf.pageCount))
     textoblock=""
-        for pg in range(pdf.pageCount):
-            page = pdf[pg]
-            texto=page.get_text()
-            textoblock=textoblock+texto
+    for pg in range(pdf.pageCount):
+        page = pdf[pg]
+        texto=page.get_text()
+        textoblock=textoblock+texto
     #text_input = text_input.decode("utf-8")
     st.write(textoblock)    
     
