@@ -50,10 +50,11 @@ text_input = st.text_area("Type a text to Analyze")
 
 uploaded_file = st.file_uploader("or Upload a file", type=[  "pdf" ])
 if uploaded_file is not None:
-    print(uploaded_file)    
-    print(uploaded_file.name)
-    text_input = uploaded_file.getvalue()
-    print('*****')
+    bytes_data = uploaded_file.read()
+    print( "filename:", uploaded_file.name)
+    
+    st.write("filename:", uploaded_file.name)
+    st.write(bytes_data)
     #open(uploaded_file. , 'wb').write(r.content)
     st.write(text_input)
     #text_input = text_input.decode("utf-8")
