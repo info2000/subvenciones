@@ -1,5 +1,6 @@
 import streamlit as st
 import spacy
+import fitz
 from annotated_text import annotated_text
 
 
@@ -47,7 +48,7 @@ selected_model = models[selected_language]
 
 text_input = st.text_area("Type a text to Analyze")
 
-uploaded_file = st.file_uploader("or Upload a file", type=["doc", "docx", "pdf", "txt"])
+uploaded_file = st.file_uploader("or Upload a file", type=[  "pdf" ])
 if uploaded_file is not None:
     text_input = uploaded_file.getvalue()
     text_input = text_input.decode("utf-8")
