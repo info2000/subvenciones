@@ -53,9 +53,10 @@ if uploaded_file is not None:
     bytes_data = uploaded_file.read()
     print( "filename:", uploaded_file.name)    
     st.write("filename:", uploaded_file.name)
-    st.write(bytes_data)
-    #open(uploaded_file. , 'wb').write(r.content)
-    st.write(text_input)
+    filepath= uploaded_file.name
+    open(filepath , 'wb').write(bytes_data)
+    
+    st.write(filepath)
     #text_input = text_input.decode("utf-8")
 
 anonymize = st.button("Analyze")
