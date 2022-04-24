@@ -5,9 +5,10 @@ name = "pypi"
 
 [packages]
 streamlit = "*"
-spacy = "*"
+spacy >= "3.2.4"
 spacy-streamlit = "*"
 st-annotated-text = "*"
+PyMuPDF
 
 [dev-packages]
 black = "*"
