@@ -1,6 +1,6 @@
 import streamlit as st
 import spacy
-import fitz
+#import fitz
 from annotated_text import annotated_text
 
 
